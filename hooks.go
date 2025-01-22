@@ -11,9 +11,9 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/mochi-mqtt/server/v2/hooks/storage"
-	"github.com/mochi-mqtt/server/v2/packets"
-	"github.com/mochi-mqtt/server/v2/system"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/hooks/storage"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/packets"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/system"
 )
 
 const (

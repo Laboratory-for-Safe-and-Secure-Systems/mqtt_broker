@@ -11,10 +11,10 @@ import (
 	"strings"
 
 	pebbledb "github.com/cockroachdb/pebble"
-	mqtt "github.com/mochi-mqtt/server/v2"
-	"github.com/mochi-mqtt/server/v2/hooks/storage"
-	"github.com/mochi-mqtt/server/v2/packets"
-	"github.com/mochi-mqtt/server/v2/system"
+	mqtt "github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/hooks/storage"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/packets"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/system"
 )
 
 const (

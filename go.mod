@@ -1,4 +1,4 @@
-module github.com/mochi-mqtt/server/v2
+module github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker
 
 go 1.21
 

@@ -14,7 +14,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/mochi-mqtt/server/v2/system"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/system"
 )
 
 const TypeSysInfo = "sysinfo"

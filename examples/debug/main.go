@@ -11,10 +11,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	mqtt "github.com/mochi-mqtt/server/v2"
-	"github.com/mochi-mqtt/server/v2/hooks/auth"
-	"github.com/mochi-mqtt/server/v2/hooks/debug"
-	"github.com/mochi-mqtt/server/v2/listeners"
+	mqtt "github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/hooks/auth"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/hooks/debug"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/listeners"
 )
 
 func main() {

@@ -13,10 +13,10 @@ import (
 	"syscall"
 	"time"
 
-	mqtt "github.com/mochi-mqtt/server/v2"
-	"github.com/mochi-mqtt/server/v2/hooks/auth"
-	"github.com/mochi-mqtt/server/v2/listeners"
-	"github.com/mochi-mqtt/server/v2/packets"
+	mqtt "github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/hooks/auth"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/listeners"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker/packets"
 )
 
 func main() {
