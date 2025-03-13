@@ -10,6 +10,9 @@ import (
 	"sync"
 	"sync/atomic"
 
+	asl "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl"
+	asllistener "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl/listener"
+
 	"log/slog"
 )
 
@@ -60,6 +63,18 @@ func (l *TCP) Init(log *slog.Logger) error {
 	var err error
 	if l.config.TLSConfig != nil {
 		l.listen, err = tls.Listen("tcp", l.address, l.config.TLSConfig)
+	} else if l.config.ASLConfig != nil {
+		listen, err := net.Listen("tcp", l.address)
+		if err != nil {
+			l.log.Warn("Failed to listen on address", "address", l.address, "error", err)
+		}
+		ep := asl.ASLsetupServerEndpoint(l.config.ASLConfig)
+		asl_listener := asllistener.ASLListener{
+			Endpoint: ep,
+			Listener: listen,
+			Debug:    true,
+		}
+		l.listen = &asl_listener
 	} else {
 		l.listen, err = net.Listen("tcp", l.address)
 	}

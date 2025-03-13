@@ -8,7 +8,9 @@ import (
 	"crypto/tls"
 	"net"
 	"sync"
+	//go -asl
 
+	asl "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl"
 	"log/slog"
 )
 
@@ -19,6 +21,7 @@ type Config struct {
 	Address string
 	// TLSConfig is a tls.Config configuration to be used with the listener. See examples folder for basic and mutual-tls use.
 	TLSConfig *tls.Config
+	ASLConfig *asl.EndpointConfig
 }
 
 // EstablishFn is a callback function for establishing new clients.

@@ -5,13 +5,13 @@
 package listeners
 
 import (
+	"fmt"
+	asl "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl"
+	asllistener "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl/listener"
 	"log/slog"
 	"net"
 	"sync"
 	"sync/atomic"
-
-	asl "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl"
-	asllib "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl/lib"
 )
 
 const TypeASL = "tcp"
@@ -46,22 +46,19 @@ func (l *ASLServer) Init(log *slog.Logger) error {
 	var err error
 
 	endpoint := asl.ASLsetupServerEndpoint(l.aslEndpointConfig)
-
-	addr, err := net.ResolveTCPAddr("tcp", l.address)
+	if endpoint == nil {
+		return fmt.Errorf("failed to setup ASL endpoint")
+	}
+	listener, err := net.Listen("tcp", l.address)
 	if err != nil {
 		return err
 	}
-
-	listener, err := net.ListenTCP("tcp", addr)
-	if err != nil {
-		return err
+	asl_listener := asllistener.ASLListener{
+		Endpoint: endpoint,
+		Debug:    true,
+		Listener: listener,
 	}
-
-	aslListener := asllib.ASLListener{
-		TcpListener: listener,
-		Endpoint:    endpoint,
-	}
-	l.listen = aslListener
+	l.listen = &asl_listener
 
 	return err
 }
@@ -123,4 +120,5 @@ func (l *ASLServer) Close(closeClients CloseFn) {
 			return
 		}
 	}
+
 }
