@@ -1,8 +1,11 @@
 module github.com/Laboratory-for-Safe-and-Secure-Systems/mqtt_broker
 
-go 1.21
+go 1.23.0
+
+toolchain go1.23.5
 
 require (
+	github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl v1.1.8
 	github.com/alicebob/miniredis/v2 v2.23.0
 	github.com/cockroachdb/pebble v1.1.0
 	github.com/dgraph-io/badger/v4 v4.2.0
@@ -50,7 +53,7 @@ require (
 	go.opencensus.io v0.22.5 // indirect
 	golang.org/x/exp v0.0.0-20230626212559-97b1e661b5df // indirect
 	golang.org/x/net v0.23.0 // indirect
-	golang.org/x/sys v0.18.0 // indirect
+	golang.org/x/sys v0.31.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
 )
