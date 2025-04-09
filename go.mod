@@ -5,7 +5,7 @@ go 1.23.0
 toolchain go1.23.5
 
 require (
-	github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl v1.1.8
+	github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl v1.1.9
 	github.com/alicebob/miniredis/v2 v2.23.0
 	github.com/cockroachdb/pebble v1.1.0
 	github.com/dgraph-io/badger/v4 v4.2.0
