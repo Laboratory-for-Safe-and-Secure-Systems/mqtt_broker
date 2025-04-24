@@ -84,7 +84,7 @@ func (l *ASLServer) Protocol() string {
 
 // Serve starts waiting for new TCP connections, and calls the establish
 // connection callback for any received.
-func (l ASLServer) Serve(establish EstablishFn) {
+func (l *ASLServer) Serve(establish EstablishFn) {
 	for {
 		if atomic.LoadUint32(&l.end) == 1 {
 			return
