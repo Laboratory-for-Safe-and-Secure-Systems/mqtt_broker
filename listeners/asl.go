@@ -6,12 +6,13 @@ package listeners
 
 import (
 	"fmt"
-	asl "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl"
-	asllistener "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl/listener"
 	"log/slog"
 	"net"
 	"sync"
 	"sync/atomic"
+
+	asl "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl"
+	asllistener "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl/listener"
 )
 
 const TypeASL = "tcp"
