@@ -56,7 +56,7 @@ func (l *ASLServer) Init(log *slog.Logger) error {
 	}
 	asl_listener := asllistener.ASLListener{
 		Endpoint: endpoint,
-		Debug:    true,
+		Debug:    false,
 		Listener: listener,
 	}
 	l.listen = &asl_listener
